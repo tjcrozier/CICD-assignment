@@ -29,11 +29,18 @@ jobs:
 
       # Step 3: Lint Python code
       #### 
+      - name: Lint Python code
+        run: python -m pylint .
 
       # Step 4: Run Python tests
       ####
-      - name: Lint Python code
-        run: python -m pylint .
+      - name: Run Python Tests
+        run: |
+          if [ -f pytest.ini ] || ls tests; then
+            pytest
+          else
+            echo "No tests found, skipping tests."
+          fi
 
   deploy:
     name: Deploy & Push to Docker Hub
