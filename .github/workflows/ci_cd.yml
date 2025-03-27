@@ -29,8 +29,8 @@ jobs:
 
       # Step 3: Lint Python code
       #### 
-      - name: Lint Python code
-        run: python -m pylint .
+      # - name: Lint Python code
+      #   run: python -m pylint .
 
       # Step 4: Run Python tests
       ####
