@@ -33,7 +33,7 @@ jobs:
       # Step 4: Run Python tests
       ####
       - name: Lint Python code
-        run: python -m pylint
+        run: python -m pylint .
 
   deploy:
     name: Deploy & Push to Docker Hub
